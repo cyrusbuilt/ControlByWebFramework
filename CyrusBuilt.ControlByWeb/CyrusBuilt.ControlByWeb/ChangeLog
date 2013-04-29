@@ -1,0 +1,68 @@
+2012-07-17  cyrus  <>
+
+	* X320MModuleController.cs: 
+
+2012-07-16  cyrus  <>
+
+	* X320MUtils.cs:
+	* CyrusBuilt.ControlByWeb.csproj:
+	* X320MAction.cs:
+	* X320MConstants.cs:
+	* X320MDiagnostics.cs:
+	* CyrusBuilt.ControlByWeb.XML: 
+
+2012-07-15  cyrus  <>
+
+	* X320MState.cs:
+	* CyrusBuilt.ControlByWeb.csproj:
+	* WebRelay10Controller.cs:
+	* X320MConstants.cs:
+	* HumidityReadings.cs:
+	* CyrusBuilt.ControlByWeb.XML:
+	* X300ModuleController.cs:
+	* TemperatureModuleController.cs: 
+
+2012-01-03  cyrus  <cyrusbuilt@gmail.com>
+
+	* Common.cs: Added DEFAULT_POLL_INTERVAL.
+	* PollEventDelegates.cs: New event delegates.
+	* CyrusBuilt.ControlByWeb.csproj: Project update.
+	* WebRelayController.cs: Fixed cref attributes in comments.
+	* WebSwitchController.cs: Now uses Common.DEFAULT_POLL_INTERVAL.
+	* WebRelay10Controller.cs: Added state polling.
+	* WebRelayPollEventArgs.cs: Now implements System.EventArgs.
+	* WebRelayQuadController.cs: Added state polling.
+	* WebRelay10PollEventArgs.cs: New poll event args class.
+	* WebRelayQuadPollEventArgs.cs: New poll event args class.
+	* CyrusBuilt.ControlByWeb.XML: Updated documentation.
+	* CyrusBuilt.ControlByWeb.dll: Updated assembly.
+	* X301ModuleController.cs: Now uses Common.DEFAULT_POLL_INTERVAL.
+	* X300ModuleController.cs: Now uses Common.DEFAULT_POLL_INTERVAL.
+	* X320ModuleController.cs: Now uses Common.DEFAULT_POLL_INTERVAL.
+	* WebRelayPollFailedEventArgs.cs: New poll failure event args class.
+	* FimPollEventArgs.cs: New poll event args class.
+	* WebRelay10PollFailedEventArgs.cs: New poll failure event args class.
+	* AnalogModuleController.cs: Added state polling.
+	* WebRelayQuadPollFailedEventArgs.cs: New poll failure event args class.
+	* FimPollEventDelegates.cs: New event delegates.
+	* FimPollFailedEventArgs.cs: New poll failure event args class.
+	* AnalogModulePollEventArgs.cs: New poll event args class.
+	* FiveInputModuleController.cs: Added state polling.
+	* AnalogModulePollEventDelegates.cs: New poll event delegates.
+	* AnalogModulePollFailedEventArgs.cs: New poll failure event args class.
+	* TemperatureModuleController.cs:  Now uses Common.DEFAULT_POLL_INTERVAL.
+
+2012-01-02  cyrus  <cyrusbuilt@gmail.com>
+
+	* WebRelayController.cs: Fixed ObjectDisposedException being thrown during Poll().
+	* CyrusBuilt.ControlByWeb.csproj:
+	* WebRelay10Controller.cs: Added object locking.
+	* WebSwitchController.cs: Added object locking.
+	* WebRelayQuadController.cs: Added object locking.
+	* X301ModuleController.cs: Added object locking.
+	* X300ModuleController.cs: Added object locking.
+	* X320ModuleController.cs: Added object locking.
+	* AnalogModuleController.cs: Added object locking.
+	* FiveInputModuleController.cs: Added object locking.
+	* TemperatureModuleController.cs: Added object locking.
+

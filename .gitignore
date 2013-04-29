@@ -12,6 +12,7 @@ TestResults
 *.suo
 *.user
 *.sln.docstates
+*.userprefs
 
 # Build results
 [Dd]ebug/
@@ -99,6 +100,7 @@ ClientBin
 [Ss]tyle[Cc]op.*
 ~$*
 *.dbmdl
+*.bak
 Generated_Code #added for RIA/Silverlight projects
 
 # Backup & report files from converting an old project file to a newer
@@ -106,3 +108,9 @@ Generated_Code #added for RIA/Silverlight projects
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
+
+# MacOS specific stuff
+.DS_Store
+
+# SVN stuff
+.svn

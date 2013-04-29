@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA614AE8-2B31-4F2A-A17E-6ED4DB524CC2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyrusBuilt.ControlByWeb</RootNamespace>
+    <AssemblyName>CyrusBuilt.ControlByWeb</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CyrusBuilt.ControlByWeb.XML</DocumentationFile>
+    <GenerateDocumentation>true</GenerateDocumentation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BadResponseFromDeviceException.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="ConnectionFailedException.cs" />
+    <Compile Include="Daq\AnalogModule\AMInput.cs" />
+    <Compile Include="Daq\AnalogModule\AnalogModuleConstants.cs" />
+    <Compile Include="Daq\AnalogModule\AnalogModuleController.cs" />
+    <Compile Include="Daq\AnalogModule\AnalogModuleState.cs" />
+    <Compile Include="Daq\FiveInputModule\FimConstants.cs" />
+    <Compile Include="Daq\FiveInputModule\FiveInputModuleState.cs" />
+    <Compile Include="Daq\X320MModule\BarometerReadings.cs" />
+    <Compile Include="Daq\X320MModule\RainfallReadings.cs" />
+    <Compile Include="Daq\X320MModule\TemperatureReadings.cs" />
+    <Compile Include="Daq\X320MModule\X320MDiagnostics.cs" />
+    <Compile Include="Daq\X320MModule\X320MModuleController.cs" />
+    <Compile Include="Daq\X320MModule\X320MState.cs" />
+    <Compile Include="DeviceStateBase.cs" />
+    <Compile Include="Events\EventBase.cs" />
+    <Compile Include="Events\EventCollection.cs" />
+    <Compile Include="Events\EventConstants.cs" />
+    <Compile Include="Events\EventUtils.cs" />
+    <Compile Include="Events\PollEventDelegates.cs" />
+    <Compile Include="Events\PollFailedEventArgs.cs" />
+    <Compile Include="Events\PollStatusEventArgs.cs" />
+    <Compile Include="IDeviceState.cs" />
+    <Compile Include="Inputs\AnalogInputModes.cs" />
+    <Compile Include="PeriodUnits.cs" />
+    <Compile Include="Daq\TemperatureModule\TempModuleConstants.cs" />
+    <Compile Include="Daq\X300Module\FanMode.cs" />
+    <Compile Include="Daq\X300Module\HeatMode.cs" />
+    <Compile Include="Daq\X300Module\X300Constants.cs" />
+    <Compile Include="Daq\X300Module\X300Diagnostics.cs" />
+    <Compile Include="Daq\X300Module\X300ModuleController.cs" />
+    <Compile Include="Daq\X300Module\X300OperationMode.cs" />
+    <Compile Include="Daq\X300Module\X300TempMonitorState.cs" />
+    <Compile Include="Daq\X300Module\X300ThermostatState.cs" />
+    <Compile Include="Daq\X300Module\X300Utils.cs" />
+    <Compile Include="Daq\X301Module\X301Diagnostics.cs" />
+    <Compile Include="Daq\X301Module\X301EventCollection.cs" />
+    <Compile Include="Daq\X301Module\X301ModuleController.cs" />
+    <Compile Include="AlarmConditions.cs" />
+    <Compile Include="Daq\X320Module\X320Action.cs" />
+    <Compile Include="Daq\X320Module\X320Constants.cs" />
+    <Compile Include="Daq\X320Module\X320Diagnostics.cs" />
+    <Compile Include="Daq\X320Module\X320Event.cs" />
+    <Compile Include="Daq\X320Module\X320EventCollection.cs" />
+    <Compile Include="Daq\X320Module\X320ModuleController.cs" />
+    <Compile Include="Daq\X320Module\X320State.cs" />
+    <Compile Include="Daq\X320Module\X320Utils.cs" />
+    <Compile Include="Diagnostics\DiagnosticsBase.cs" />
+    <Compile Include="Epoch.cs" />
+    <Compile Include="Inputs\AnalogInput.cs" />
+    <Compile Include="Inputs\IOMode.cs" />
+    <Compile Include="Inputs\StandardInput.cs" />
+    <Compile Include="Daq\FiveInputModule\FiveInputModuleController.cs" />
+    <Compile Include="Inputs\SensorInput.cs" />
+    <Compile Include="Daq\TemperatureModule\TemperatureModuleController.cs" />
+    <Compile Include="Daq\TemperatureModule\TemperatureModuleState.cs" />
+    <Compile Include="TemperatureUnits.cs" />
+    <Compile Include="Inputs\InputState.cs" />
+    <Compile Include="ModuleBase.cs" />
+    <Compile Include="PowerUpFlag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relays\Relay.cs" />
+    <Compile Include="Relays\RelayState.cs" />
+    <Compile Include="Security\Crypto.cs" />
+    <Compile Include="UnauthorizedAccessException.cs" />
+    <Compile Include="UnsupportedMethodException.cs" />
+    <Compile Include="WebRelay\WebRelay10Action.cs" />
+    <Compile Include="WebRelay\WebRelay10Constants.cs" />
+    <Compile Include="WebRelay\WebRelay10Controller.cs" />
+    <Compile Include="WebRelay\WebRelay10Diagnostics.cs" />
+    <Compile Include="WebRelay\WebRelay10PlusController.cs" />
+    <Compile Include="WebRelay\WebRelay10PlusEvent.cs" />
+    <Compile Include="WebRelay\WebRelay10PlusEventCollection.cs" />
+    <Compile Include="WebRelay\WebRelay10PlusDiagnostics.cs" />
+    <Compile Include="WebRelay\WebRelay10PlusState.cs" />
+    <Compile Include="WebRelay\WebRelay10State.cs" />
+    <Compile Include="WebRelay\WebRelay10Utils.cs" />
+    <Compile Include="WebRelay\WebRelayController.cs" />
+    <Compile Include="WebRelay\WebRelayQuadController.cs" />
+    <Compile Include="WebRelay\WebRelayQuadState.cs" />
+    <Compile Include="WebRelay\WebRelayState.cs" />
+    <Compile Include="Daq\X301Module\X301Constants.cs" />
+    <Compile Include="Daq\X301Module\X301Event.cs" />
+    <Compile Include="Daq\X301Module\X301Action.cs" />
+    <Compile Include="Daq\X301Module\X301Utils.cs" />
+    <Compile Include="Daq\X301Module\X301State.cs" />
+    <Compile Include="IResetable.cs" />
+    <Compile Include="WebSwitch\WebSwitchAction.cs" />
+    <Compile Include="WebSwitch\WebSwitchConstants.cs" />
+    <Compile Include="WebSwitch\WebSwitchController.cs" />
+    <Compile Include="WebSwitch\WebSwitchDiagnostics.cs" />
+    <Compile Include="WebSwitch\WebSwitchEventCollection.cs" />
+    <Compile Include="WebSwitch\WebSwitchPlusController.cs" />
+    <Compile Include="WebSwitch\WebSwitchPlusEvent.cs" />
+    <Compile Include="WebSwitch\WebSwitchPlusState.cs" />
+    <Compile Include="RebootState.cs" />
+    <Compile Include="WebSwitch\WebSwitchPlusDiagnostics.cs" />
+    <Compile Include="WebSwitch\WebSwitchState.cs" />
+    <Compile Include="WebSwitch\WebSwitchUtils.cs" />
+    <Compile Include="Daq\X320MModule\HumidityReadings.cs" />
+    <Compile Include="Daq\X320MModule\X320MConstants.cs" />
+    <Compile Include="Daq\X320MModule\X320MAction.cs" />
+    <Compile Include="Daq\X320MModule\X320MUtils.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="Hierarchical" ResourceNamePolicy="MSBuild" />
+          <TextStylePolicy FileWidth="120" TabWidth="4" EolMarker="Windows" inheritsSet="Mono" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentSwitchBody="True" MethodBraceStyle="EndOfLine" ConstructorBraceStyle="EndOfLine" DestructorBraceStyle="EndOfLine" IfElseBraceForcement="AddBraces" ForBraceForcement="AddBraces" WhileBraceForcement="AddBraces" UsingBraceForcement="AddBraces" FixedBraceForcement="AddBraces" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeIndexerDeclarationBracket="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <TextStylePolicy FileWidth="120" TabWidth="4" EolMarker="Windows" inheritsSet="Mono" inheritsScope="text/plain" scope="text/plain" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,137 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f06d3263-9c53-4568-90e8-407583d71866}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.0.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\CHM\</OutputPath>
+    <HtmlHelpName>ControlByWeb API Documentation</HtmlHelpName>
+    <Language>en-US</Language>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\bin\Debug\CyrusBuilt.ControlByWeb.dll" xmlns="" />
+<DocumentationSource sourceFile="..\bin\Debug\CyrusBuilt.ControlByWeb.XML" xmlns="" /></DocumentationSources>
+    <BuildLogFile>Build.log</BuildLogFile>
+    <FrameworkVersion>4.0.30319</FrameworkVersion>
+    <ComponentConfigurations>
+      <ComponentConfig id="Cached Framework Comments Index Data" enabled="True" xmlns="">
+        <component id="Cached Framework Comments Index Data" type="SandcastleBuilder.Components.CachedCopyFromIndexComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll">
+<index name="comments" value="/doc/members/member" key="@name" cache="100">
+{@CachedFrameworkCommentList}
+{@CommentFileList}
+            </index>
+<copy name="comments" source="*" target="/document/comments" />
+</component>
+      </ComponentConfig>
+<ComponentConfig id="Cached MSDN URL References" enabled="True" xmlns=""><component id="Cached MSDN URL References" type="SandcastleBuilder.Components.CachedResolveReferenceLinksComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll" locale="{@Locale}" linkTarget="{@SdkLinkTarget}">
+<helpOutput format="HtmlHelp1">
+  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@HtmlSdkLinkType}" />
+  <targets files="reflection.xml" type="Local" />
+</helpOutput>
+<helpOutput format="MSHelp2">
+  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelp2SdkLinkType}" />
+  <targets files="reflection.xml" type="Index" />
+</helpOutput>
+<helpOutput format="MSHelpViewer">
+  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelpViewerSdkLinkType}" />
+  <targets files="reflection.xml" type="Id" />
+</helpOutput>
+<helpOutput format="Website">
+  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@WebsiteSdkLinkType}" />
+  <targets files="reflection.xml" type="Local" />
+</helpOutput>
+</component></ComponentConfig>
+<ComponentConfig id="Cached Reflection Index Data" enabled="True" xmlns=""><component id="Cached Reflection Index Data" type="SandcastleBuilder.Components.CachedCopyFromIndexComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll">
+<index name="reflection" value="/reflection/apis/api" key="@id" cache="10">
+  <cache base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" cacheFile="{@LocalDataFolder}Cache\Reflection.cache" />
+  <data files="reflection.xml" />
+</index>
+<copy name="reflection" source="*" target="/document/reference" />
+</component></ComponentConfig>
+<ComponentConfig id="Code Block Component" enabled="True" xmlns=""><component id="Code Block Component" type="SandcastleBuilder.Components.CodeBlockComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll">
+  <basePath value="{@HtmlEncProjectFolder}" />
+  <languageFilter value="true" />
+  <allowMissingSource value="false" />
+  <removeRegionMarkers value="false" />
+  <colorizer syntaxFile="{@SHFBFolder}Colorizer\highlight.xml" styleFile="{@SHFBFolder}Colorizer\highlight.xsl" copyImageUrl="../icons/CopyCode.gif" language="cs" tabSize="3" numberLines="true" outlining="true" keepSeeTags="false" defaultTitle="true" />
+</component></ComponentConfig>
+<ComponentConfig id="IntelliSense Component" enabled="True" xmlns=""><component id="IntelliSense Component" type="SandcastleBuilder.Components.IntelliSenseComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll"><!-- Output options (optional)
+                 Attributes:
+                    Include Namespaces (false by default)
+                    Namespaces filename ("Namespaces" if not specified or empty)
+                    Directory (current folder if not specified or empty) --><output includeNamespaces="false" namespacesFile="Namespaces" folder="{@OutputFolder}" /></component></ComponentConfig>
+<ComponentConfig id="Post-transform Component" enabled="True" xmlns=""><component id="Post-transform Component" type="SandcastleBuilder.Components.PostTransformComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll"><!-- Code colorizer files (required).
+                 Attributes:
+                    Stylesheet file (required)
+                    Script file (required)
+                    "Copy" image file (required) --><colorizer stylesheet="{@SHFBFolder}Colorizer\highlight.css" scriptFile="{@SHFBFolder}Colorizer\highlight.js" copyImage="{@SHFBFolder}Colorizer\CopyCode.gif" /><!-- Base output paths for the files (required).  These should match
+                 the parent folder of the output path of the HTML files (see
+                 each of the SaveComponent instances below). --><outputPaths>
+{@HelpFormatOutputPaths}
+            </outputPaths><!-- Logo image file (optional).  Filename is required. The height,
+                 width, altText, placement, and alignment attributes are
+                 optional. --><logoFile filename="" height="0" width="0" altText="" placement="left" alignment="left" /></component></ComponentConfig></ComponentConfigurations>
+    <PlugInConfigurations>
+      <PlugInConfig id="Hierarchical Table of Contents" enabled="True">
+        <configuration>
+          <toc minParts="2" insertBelow="True" />
+        </configuration>
+      </PlugInConfig>
+    </PlugInConfigurations>
+    <FeedbackEMailAddress>cyrusbuilt%40gmail.com</FeedbackEMailAddress>
+    <HelpTitle>ControlByWeb API Documentation</HelpTitle>
+    <HtmlHelp1xCompilerPath>..\..\..\..\..\..\..\Program Files (x86)\HTML Help Workshop\</HtmlHelp1xCompilerPath>
+    <SandcastlePath>..\..\..\..\..\..\..\Program Files (x86)\Sandcastle\</SandcastlePath>
+    <WorkingPath>Work\</WorkingPath>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="False" xmlns="" />
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb" isDocumented="True" xmlns="">A framework for monitoring and controlling the entire ControlByWeb(tm) product line from Xytronix(tm).</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.AnalogModule" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) Analog Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.FiveInputModule" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) Five Input Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.TemperatureModule" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) Temperature Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.X300Module" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) X-300 Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.X301Module" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) X-301 Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Daq.X320Module" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) X-320 Module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Diagnostics" isDocumented="True" xmlns="">Contains the diagnostics base class for working with modules that support diagnostics.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Events" isDocumented="True" xmlns="">Contains constants and utilities for working with modules that support events.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Inputs" isDocumented="True" xmlns="">Contains classes and tools for working with various types of inputs on ControlByWeb(tm) devices.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Relays" isDocumented="True" xmlns="">Contains the Relay object class and state enumeration.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.Security" isDocumented="True" xmlns="">A set of security and cryptography tools that can be used with the interface modules.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.WebRelay" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) WebRelay, WebRelay Quad, and WebRelay-10 Modules.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="CyrusBuilt.ControlByWeb.WebSwitch" isDocumented="True" xmlns="">Contains classes, constants, and delegates for interfacing with the ControlByWeb(tm) WebSwitch Module.</NamespaceSummaryItem></NamespaceSummaries>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in
+       order for Visual Studio to perform the build.  The others are optional
+       common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>
